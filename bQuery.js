@@ -32,8 +32,34 @@ var bQuery = {
   },
   load: function(func) {
     this.ready(document, func)
+  },
+  ajax: function(xml, json, get, url, qurey) {
+    var xhttp, txt;
+    if (window.XMLHttpRequest) {
+      xhttp = new XMLHttpRequest(); // Code for morden browsers
+    } else {
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP"); // Code for IE8 or lower
+    }
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if (xml == true) {
+          txt = this.responseXML;
+        } else if (json == true) {
+          txt = JSON.parse(this.responseText);
+        } else {
+          txt = this.responseText;
+        }
+      }
+    }
+    if (get == true) {
+      xhttp.open(url);
+      xhttp.send();
+    } else {
+      xhttp.open(url);
+      xhttp.send(qurey);
+    }
   }
-}
+};
 function noConfilct() {
   if (bQuery !== undefined) {
     var copy = bQuery;
