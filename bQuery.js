@@ -60,10 +60,4 @@ var bQuery = {
     }
   }
 };
-function noConfilct() {
-  if (bQuery !== undefined) {
-    var copy = bQuery;
-    delete bQuery; // Deletes bQuery varible
-    return copy;
-  }
-}
+export {bQuery};
