@@ -63,3 +63,27 @@ jQuery:
   });
 </script>
 ```
+
+## bQuery short for `bQuery.ready(document, function() {})`
+
+bQuery:
+
+```html
+<script src="https://brunozhon.github.io/bQuery/bQuery.js"></script>
+<script>
+  bQuery.load(function() {
+    // Actions go here
+  });
+</script>
+```
+
+jQuery (this method is easier, but more harder to understand):
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function() {
+    // Actions go here
+  });
+</script>
+```
