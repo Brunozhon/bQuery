@@ -29,6 +29,9 @@ var bQuery = {
   },
   $one: function(elem) {
     return document.querySelector(elem)
+  },
+  load: function(func) {
+    this.ready(document, func)
   }
 }
 function noConfilct() {
