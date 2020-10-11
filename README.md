@@ -87,3 +87,47 @@ jQuery (this method is easier, but more harder to understand):
   });
 </script>
 ```
+
+# Bruact
+
+Bruact is a query languge. Example:
+
+`app.js`
+
+```javascript
+import {Bruact, BruactDOM} from 'https://brunozhon.github.io/bQuery/bruact.js';
+BruactDOM.load(document, function() {
+  Bruact.execute(document.querySelector(".myClass"));
+});
+```
+
+`index.html`
+
+```html
+<p>Hello {{persons[2].name}}</p>
+<p>Your father is {{persons[0].name}} and mother is {{persons[1].name}}</p>
+<script src="app.js"></script>
+<script src="bQuery.js"></script>
+<script>
+  var persons = bQuery.ajax(false, true, true, "data.json");
+</script>
+```
+
+`data.json`
+
+```json
+[
+  {
+    "name":"Mr. Doe",
+    "age":36
+  },
+  {
+    "name":"Mrs. Doe",
+    "age":27
+  },
+  {
+    "name":"Al Doe",
+    "age":8
+  }
+]
+```
